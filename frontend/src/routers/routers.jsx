@@ -4,6 +4,8 @@ import { AuthProvider } from '../context/AuthContext';
 import Layout from '../Layout/Layout';
 import ProtectedRoute from '../components/ProtectedRoute';
 
+// Definición de rutas con carga perezosa y protección por Auth
+
 // Lazy loading de componentes
 const HomePage = lazy(() => import('../pages/HomePage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
@@ -12,7 +14,7 @@ const ItemsListPage = lazy(() => import('../pages/ItemsListPage'));
 const ItemsCreatePage = lazy(() => import('../pages/ItemsCreatePage'));
 const ItemsDetailsPage = lazy(() => import('../pages/ItemsDetailsPage'));
 
-// Componente de carga
+// Componente de carga para suspense
 function LoadingFallback() {
   return (
     <div style={{ 

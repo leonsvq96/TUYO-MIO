@@ -8,12 +8,14 @@ import {
 } from '../controllers/itemsController.js';
 import { authenticate } from '../middlewares/auth.js';
 
+// Rutas CRUD de productos con auth obligatoria
+
 const router = express.Router();
 
-router.get('/', authenticate, listItemsController);
-router.get('/:id', authenticate, getItemsController);
-router.post('/', authenticate, createItemsController);
-router.put('/:id', authenticate, updateItemsController);
-router.delete('/:id', authenticate, deleteItemsController);
+router.get('/', authenticate, listItemsController);          // listar
+router.get('/:id', authenticate, getItemsController);        // detalle
+router.post('/', authenticate, createItemsController);       // crear
+router.put('/:id', authenticate, updateItemsController);     // actualizar
+router.delete('/:id', authenticate, deleteItemsController);  // eliminar
 
 export default router;

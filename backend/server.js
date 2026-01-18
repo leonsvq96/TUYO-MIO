@@ -47,7 +47,7 @@ app.get('/', indexController);
 app.use('/api/auth', authRouter);
 app.use('/api/items', itemsRouter);
 
-// Middlewares de error (deben ir al final)
+// Middlewares de error
 app.use(notFound);
 app.use(internalServerError);
 

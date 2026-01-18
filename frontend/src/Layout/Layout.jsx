@@ -1,11 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
+// Layout general con navbar, contenido y footer
+
 const Layout = () => {
     const { user, isAuthenticated, logout } = useAuth();
 
     const handleLogout = () => {
-        logout();
+        logout(); // cierro sesión y limpio estado global
     };
 
     return (

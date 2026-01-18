@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiService } from '../services/apiService';
 
+// Formulario para crear un nuevo producto
+
 export default function ItemsCreatePage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -17,6 +19,7 @@ export default function ItemsCreatePage() {
   
   const navigate = useNavigate();
 
+  // Manejo cambios de inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -25,6 +28,7 @@ export default function ItemsCreatePage() {
     }));
   };
 
+  // Envío el producto, normalizando price/stock a número
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');

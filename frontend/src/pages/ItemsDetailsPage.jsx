@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { apiService } from '../services/apiService';
 import { useAuth } from '../hooks/useAuth';
 
+// Página de detalle: muestra info y permite editar si eres dueño/admin
+
 export default function ItemsDetailsPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -22,10 +24,12 @@ export default function ItemsDetailsPage() {
     location: ''
   });
 
+  // Cargo el producto cuando cambia el id de la ruta
   useEffect(() => {
     loadItem();
   }, [id]);
 
+  // Traigo el detalle y relleno el formulario con lo que llega
   const loadItem = async () => {
     try {
       setLoading(true);
@@ -48,6 +52,7 @@ export default function ItemsDetailsPage() {
     }
   };
 
+  // Manejo el cambio de inputs del formulario
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -56,6 +61,7 @@ export default function ItemsDetailsPage() {
     }));
   };
 
+  // Guardo el producto editado
   const handleUpdate = async (e) => {
     e.preventDefault();
     
@@ -76,6 +82,7 @@ export default function ItemsDetailsPage() {
     }
   };
 
+  // Estados de carga y error iniciales
   if (loading && !item) {
     return (
       <div className="loading-container">

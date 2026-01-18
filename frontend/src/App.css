@@ -1,6 +1,4 @@
-/* ========================================
-   ROOT & RESET
-   ======================================== */
+/*  ROOT */
 
 :root {
   --primary-brown: #6B4423;
@@ -53,9 +51,7 @@ body {
   width: 100%;
 }
 
-/* ========================================
-   GLOBAL ELEMENTS
-   ======================================== */
+/*  GLOBAL ELEMENTS */
 
 a {
   font-weight: 500;
@@ -95,9 +91,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* ========================================
-   NAVBAR STYLES
-   ======================================== */
+/*  NAVBAR  */
 
 .navbar {
   background: linear-gradient(135deg, rgba(62, 39, 35, 0.85) 0%, rgba(107, 68, 35, 0.85) 100%);
@@ -227,9 +221,7 @@ button:focus-visible {
   background-color: rgba(249, 168, 37, 0.2);
 }
 
-/* ========================================
-   MAIN CONTENT
-   ======================================== */
+/*  MAIN CONTENT  */
 
 .main-content {
   flex: 1;
@@ -240,9 +232,7 @@ button:focus-visible {
   width: 100%;
 }
 
-/* ========================================
-   FOOTER STYLES
-   ======================================== */
+/*  FOOTER  */
 
 .footer {
   background: linear-gradient(135deg, rgba(62, 39, 35, 0.85) 0%, rgba(107, 68, 35, 0.85) 100%);
@@ -259,9 +249,7 @@ button:focus-visible {
   margin: 0;
 }
 
-/* ========================================
-   AUTHENTICATION STYLES
-   ======================================== */
+/*  AUTHENTICATION  */
 
 .auth-container {
   min-height: 100vh;
@@ -347,9 +335,7 @@ button:focus-visible {
   font-weight: 600;
 }
 
-/* ========================================
-   BUTTONS
-   ======================================== */
+/*  BUTTONS  */
 
 .btn-primary {
   padding: 12px 24px;
@@ -453,9 +439,7 @@ button:focus-visible {
   background-color: #c82333;
 }
 
-/* ========================================
-   ITEMS LIST STYLES
-   ======================================== */
+/*  ITEMS LIST  */
 
 .header {
   display: flex;
@@ -555,9 +539,7 @@ button:focus-visible {
   margin-top: 15px;
 }
 
-/* ========================================
-   FORMS STYLES
-   ======================================== */
+/*  FORMS  */
 
 .items-create {
   max-width: 600px;
@@ -586,9 +568,7 @@ button:focus-visible {
   margin-top: 30px;
 }
 
-/* ========================================
-   DETAILS STYLES
-   ======================================== */
+/*  DETAILS  */
 
 .items-details {
   max-width: 800px;
@@ -699,9 +679,7 @@ button:focus-visible {
   font-style: italic;
 }
 
-/* ========================================
-   LOADING AND ERROR STATES
-   ======================================== */
+/*  LOADING AND ERROR */
 
 .loading-container, .error-container {
   display: flex;
@@ -718,9 +696,7 @@ button:focus-visible {
   padding: 40px;
 }
 
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
+/*  RESPONSIVE DESIGN  */
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -765,17 +741,15 @@ button:focus-visible {
   }
 }
 
-/* ========================================
-   HOME PAGE STYLES
-   ======================================== */
+/*  HOME PAGE  */
 
 .home-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
 }
+  
 
-/* Hero Section */
 .hero-section {
   background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--amber) 100%);
   padding: 80px 20px;
@@ -854,7 +828,7 @@ button:focus-visible {
   font-size: 1.1em;
 }
 
-/* Featured Section */
+
 .featured-section {
   margin: 60px 0;
   padding: 0 20px;
@@ -966,7 +940,7 @@ button:focus-visible {
   color: #dc3545;
 }
 
-/* Stats Section */
+
 .stats-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

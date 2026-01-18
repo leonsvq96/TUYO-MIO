@@ -1,3 +1,4 @@
+// Config global: URLs, endpoints, status y roles
 export const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://tuyo-mio-ytlo.vercel.app/api';
 
 export const API_ENDPOINTS = {

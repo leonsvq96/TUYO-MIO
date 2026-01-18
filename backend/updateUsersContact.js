@@ -2,6 +2,8 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import User from './models/userModel.js';
 
+// Script puntual para rellenar phone/location de usuarios existentes
+
 dotenv.config();
 
 const updateUsers = async () => {

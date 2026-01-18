@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
+// Página de login con usuario/email + password
+
 export default function LoginPage() {
     const [emailOrUsername, setEmailOrUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -11,6 +13,7 @@ export default function LoginPage() {
     const { login } = useAuth();
     const navigate = useNavigate();
 
+    // Intento login y redirijo si sale bien
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');

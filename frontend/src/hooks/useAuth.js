@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
-// Hook personalizado para usar el contexto de autenticación
+// Hook helper: obtiene el contexto de auth o lanza error si no hay provider
 export const useAuth = () => {
     const context = useContext(AuthContext);
     

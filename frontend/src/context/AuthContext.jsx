@@ -2,6 +2,8 @@ import { createContext, useState, useEffect } from 'react';
 import { LOCAL_STORAGE_KEYS } from '../const/constants';
 import { authService } from '../services/apiService';
 
+// Contexto de autenticación: maneja token, usuario y helpers login/register/logout
+
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {

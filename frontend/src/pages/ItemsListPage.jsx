@@ -4,6 +4,7 @@ import { apiService } from '../services/apiService';
 import { useAuth } from '../hooks/useAuth';
 
 export default function ItemsListPage() {
+  // Estado principal: items completos, filtrados, loading/error y categoría por querystring
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,10 +15,12 @@ export default function ItemsListPage() {
   const navigate = useNavigate();
   const categoryParam = searchParams.get('category');
 
+  // Re-cargo cuando cambia la categoría en la URL
   useEffect(() => {
     loadItems();
   }, [categoryParam]);
 
+  // Pido todos los items y filtro por categoría si viene en query
   const loadItems = async () => {
     try {
       setLoading(true);
@@ -40,6 +43,7 @@ export default function ItemsListPage() {
     }
   };
 
+  // Eliminar item con confirmación y refresco local
   const handleDelete = async (id) => {
     if (window.confirm('¿Estás seguro de que deseas eliminar este producto?')) {
       try {
@@ -51,6 +55,7 @@ export default function ItemsListPage() {
     }
   };
 
+  // Cierro sesión y llevo al login
   const handleLogout = () => {
     logout();
     navigate('/login');

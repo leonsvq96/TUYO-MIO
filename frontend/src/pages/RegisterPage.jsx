@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
+// Página de registro con validación de confirmación de contraseña
+
 export default function RegisterPage() {
     const [formData, setFormData] = useState({
         username: '',
@@ -17,6 +19,7 @@ export default function RegisterPage() {
     const { register } = useAuth();
     const navigate = useNavigate();
 
+    // Manejo cambios de inputs
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
@@ -25,6 +28,7 @@ export default function RegisterPage() {
         }));
     };
 
+    // Valido contraseñas y registro, luego redirijo
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');

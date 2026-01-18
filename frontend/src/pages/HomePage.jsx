@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { apiService } from '../services/apiService';
 import { useAuth } from '../hooks/useAuth';
 
+// Página de inicio: categorías, destacados y CTA para publicar
+
 const getCategoryIcon = (category) => {
     const icons = {
         'Electrónica': '📱',
@@ -55,10 +57,12 @@ const HomePage = () => {
     const navigate = useNavigate();
     const { user } = useAuth();
 
+    // Cargo productos destacados al montar
     useEffect(() => {
         fetchFeaturedItems();
     }, []);
 
+    // Pido todos los items y me quedo con los primeros 6
     const fetchFeaturedItems = async () => {
         try {
             const data = await apiService.getAllItems();
@@ -75,6 +79,7 @@ const HomePage = () => {
         }
     };
 
+    // Navegaciones auxiliares
     const handleViewProduct = (id) => {
         navigate(`/items/${id}`);
     };

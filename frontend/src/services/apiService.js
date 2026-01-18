@@ -1,6 +1,7 @@
 import { API_BASE_URL, LOCAL_STORAGE_KEYS } from '../const/constants';
 
-// Obtener token del localStorage
+// Servicio HTTP: auth + CRUD de items con token en headers
+
 const getToken = () => localStorage.getItem(LOCAL_STORAGE_KEYS.TOKEN);
 
 // Crear headers con autenticación

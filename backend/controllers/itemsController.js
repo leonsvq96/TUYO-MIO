@@ -1,5 +1,8 @@
 import items from '../models/itemsModel.js';
 
+// Controladores de items: listar, detalle, crear, actualizar y borrar
+
+// Devuelvo todos los productos con datos básicos del creador
 const listItemsController = async (req, res) => {
     try {
         const allItems = await items.find().populate('createdBy', 'username email phone location');
@@ -9,6 +12,7 @@ const listItemsController = async (req, res) => {
     }
 };
 
+// Detalle de un producto
 const getItemsController = async (req, res) => {
     try {
         const item = await items.findById(req.params.id).populate('createdBy', 'username email phone location');
@@ -19,6 +23,7 @@ const getItemsController = async (req, res) => {
     }
 };
 
+// Creo un producto nuevo asociándolo al usuario autenticado
 const createItemsController = async (req, res) => {
     console.log('📦 Petición crear item recibida:', req.body);
     console.log('👤 Usuario autenticado:', req.user);
@@ -46,6 +51,7 @@ const createItemsController = async (req, res) => {
     }
 };
 
+// Actualizo un producto si el usuario es dueño o admin
 const updateItemsController = async (req, res) => {
     try {
         const item = await items.findById(req.params.id);
@@ -73,6 +79,7 @@ const updateItemsController = async (req, res) => {
     }
 };
 
+// Elimino un producto si el usuario es dueño o admin
 const deleteItemsController = async (req, res) => {
     try {
         const item = await items.findById(req.params.id);
